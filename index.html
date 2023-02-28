@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+
+<body>
+
+  <div id="root"></div>
+
+
+  <script>
+
+
+
+  const itsMe = {
+      name : "jin",
+      age : 24,
+      home : "dj",
+      hosil : 305,
+      sentence : "I am" + this.name + "from ys",
+      //뱁틱 사용
+      test : 'I am ${this.name} from ys',
+    
+      adult : function(){
+        if(itsMe.age >= 20){
+          console.log("I am adult");
+        }else{
+          console.log("You're not adult");
+        }
+      },
+
+      nickname : function(){
+        this.name = "hulk"
+      }
+    
+    };
+
+
+    //console.dir(window.console);
+    console.table(itsMe);
+    itsMe.nickname();
+    console.table(itsMe);
+
+
+    /*
+    //정적할당
+    let itsMe = {
+     // name : "jin",
+     // age : 24,
+    };
+    */
+
+    //동적할달
+    /*
+    const itsMe = {
+      name : "jin",
+      age : 24,
+      home : "dj",
+      hosil : 305,
+      sentence : "I am" + this.name + "from ys",
+      //뱁틱 사용
+      test : 'I am ${this.name} from ys',
+    
+      adult : function(){
+        if(itsMe.age >= 20){
+          console.log("I am adult");
+        }else{
+          console.log("You're not adult");
+        }
+      },
+    
+    };
+    //호출방식
+    itsMe.adult();
+    */
+
+
+    /*
+    itsMe.myName = function(){
+      console.log("I am" + this.name + "from ys");
+    }
+    */
+
+      //itsMe.name = "jin";
+      //itsMe.age = 24;
+      //itsMe.home = "dj"
+      //itsMe.hosil = 305
+
+    //console.log(itsMe.name);
+    //console.log(itsMe.age);
+    //console.dir(itsMe);
+
+
+
+
+    
+  </script>
+
+
+
+
+</body>
+</html>
