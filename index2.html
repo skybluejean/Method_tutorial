@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    #menu{
+      width: 100px;
+      height: 100px;
+      background-color: blueviolet;
+    }
+  </style>
+
+</head>
+
+
+
+<body>
+<div id="root"></div>
+ 
+<script>
+  const root = document.getElementById('root');
+
+
+  const ElementMaker = {
+    tagname : "",
+    setAttName : "", 
+    setAttValue : "", 
+    parent : "",
+
+    maker : function(){
+      const element = document.createElement(this.tagname);
+      element.setAttribute(this.setAttName,this.setAttValue);
+      this.parent.appendChild(element);
+    },
+    loopFunc : function(){
+      for(let i = 0; i < 100; i++){
+        this.maker();
+      }
+    }
+  }
+
+
+  function ulMaker(tagname,setAttName, setAttValue, parent){
+    const element = document.createElement(tagname);
+    element.setAttribute(setAttName,setAttValue);
+    parent.appendChild(element);
+  }
+  for(let i = 0; i < 100; i++){
+    ulMaker("header", "id", "test-${i}", root);
+  }
+
+  const pick = document.querySelector('header').children[16];
+  console.dir(pick);
+
+</script>
+
+
+</body>
+</html>
